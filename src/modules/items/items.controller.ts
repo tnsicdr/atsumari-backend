@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
 import { ItemsService } from './items.service';
@@ -22,7 +22,7 @@ export class ItemsController {
   }
 
   @Post()
-  createOne(@Param() params: CreateItemDto) {
-    return this.itemsService.createOne(params);
+  createOne(@Body() body: CreateItemDto) {
+    return this.itemsService.createOne(body);
   }
 }

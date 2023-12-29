@@ -13,19 +13,19 @@ export class Item {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ nullable: true })
   manufacturer: string | null;
 
-  @Column()
+  @Column({ nullable: true })
   publisher: string | null;
 
-  @Column()
+  @Column({ nullable: true })
   productCode: string | null;
 
-  @Column()
+  @Column({ default: 0 })
   qty: number;
 
-  @Column()
+  @Column({ default: 0 })
   qty_pending: number;
 
   @Column({ type: 'enum', enum: ItemType, default: ItemType.ITEM })

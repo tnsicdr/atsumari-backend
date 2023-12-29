@@ -20,6 +20,7 @@ import { Item } from './entities/item.entity';
         password: configService.get('DATABASE_PASS'),
         database: configService.get('DATABASE_SCHEMA'),
         entities: [Item],
+        synchronize: configService.get('NODE_ENV') === 'development',
       }),
     }),
     ItemsModule,
